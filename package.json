@@ -1,0 +1,25 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Simple todo list",
+  "main": "main.js",
+  "dependencies": {
+    "prettier": "^2.2.1",
+    "webpack-cli": "^4.2.0",
+    "webpack": "^5.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisJohnson0804/todolist.git"
+  },
+  "author": "Chris Johnson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisJohnson0804/todolist/issues"
+  },
+  "homepage": "https://github.com/ChrisJohnson0804/todolist#readme"
+}

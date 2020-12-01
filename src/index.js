@@ -1,80 +1,63 @@
 const DOM = (() => {
+  return {
+    sideBar: document.querySelector("#sidebar"),
+    mainArea: document.querySelector("#maintodoarea"),
+    header: document.querySelector("#todoheader"),
+    listSpace: document.querySelector("#todoitems"),
+    addButton: document.querySelector("#addtodo"),
+    formData: Array.from(document.querySelector("#newtodo")),
 
-    return {
+    makeTodoRow: function () {
+      const row = document.createElement("div");
+      row.className = "todorow";
 
-        sideBar: document.querySelector("#sidebar"),
-        mainArea: document.querySelector("#maintodoarea"),
-        header: document.querySelector("#todoheader"),
-        listSpace: document.querySelector("#todoitems"),
-        addButton: document.querySelector("#addtodo"),
-        formData: Array.from(document.querySelector("#newtodo")),
+      const nameSpace = document.createElement("div");
+      nameSpace.className = "namespace";
+      row.appendChild(nameSpace);
 
-        makeTodoRow: function(){
+      const dateSpace = document.createElement("div");
+      dateSpace.className = "datespace";
+      row.appendChild(dateSpace);
 
-            const row = document.createElement('div');
-            row.className = "todorow";
+      const prioritySpace = document.createElement("div");
+      prioritySpace.className = "priorityspace";
+      row.appendChild(prioritySpace);
 
-            const nameSpace = document.createElement('div');
-            nameSpace.className = "namespace";
-            row.appendChild(nameSpace);
+      const deleteSpace = document.createElement("div");
+      deleteSpace.className = "deletespace";
+      row.appendChild(deleteSpace);
 
-            const dateSpace = document.createElement('div');
-            dateSpace.className = "datespace";
-            row.appendChild(dateSpace);
+      const editSpace = document.createElement("div");
+      editSpace.className = "editspace";
+      row.appendChild(editSpace);
 
-            const prioritySpace = document.createElement('div');
-            prioritySpace.className = "priorityspace";
-            row.appendChild(prioritySpace);
+      return { row, nameSpace, dateSpace, prioritySpace };
+    },
 
-            const deleteSpace = document.createElement('div');
-            deleteSpace.className = "deletespace";
-            row.appendChild(deleteSpace);
-
-            const editSpace = document.createElement('div');
-            editSpace.className = "editspace";
-            row.appendChild(editSpace);
-
-            return {row, nameSpace, dateSpace, prioritySpace};
-
-        },
-
-        insertTodo: function(todo, row) {
-
-            row.nameSpace.textContent = todo.name;
-            row.dateSpace.textContent = todo.dueDate;
-            row.prioritySpace.textContent = todo.priority;
-            this.listSpace.appendChild(row.row);
-
-        }
-
-    }
-
+    insertTodo: function (todo, row) {
+      row.nameSpace.textContent = todo.name;
+      row.dateSpace.textContent = todo.dueDate;
+      row.prioritySpace.textContent = todo.priority;
+      this.listSpace.appendChild(row.row);
+    },
+  };
 })();
 
 const todo = (name, dueDate, priority, category) => {
-    return {name, dueDate, priority, category}
-}
+  return { name, dueDate, priority, category };
+};
 
-DOM.addButton.addEventListener('click', () => {
+DOM.addButton.addEventListener("click", () => {
+  const project = DOM.formData[0].value;
+  const name = DOM.formData[1].value;
+  const dueDate = DOM.formData[2].value;
+  let priority = "";
+  for (let i = 3; i <= 5; i++) {
+    if (DOM.formData[i].checked == true) priority = DOM.formData[i].value;
+  }
 
-    const project = DOM.formData[0].value;
-    const name = DOM.formData[1].value;
-    const dueDate = DOM.formData[2].value;
-    let priority = "";
-    for (let i=3; i<=5; i++){
-        if(DOM.formData[i].checked == true)
-        priority = DOM.formData[i].value;
-    }
+  const newRow = DOM.makeTodoRow();
+  const newTodo = todo(name, dueDate, priority, project);
 
-    const newRow = DOM.makeTodoRow();
-    const newTodo = todo(name, dueDate, priority, project);
-
-    DOM.insertTodo(newTodo, newRow);
-
+  DOM.insertTodo(newTodo, newRow);
 });
-
-
-
-
-
-
