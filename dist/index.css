@@ -1,0 +1,28 @@
+body{
+    display: flex;
+}
+
+#sidebar{
+    width: 5%;
+    height: 1000px;
+    border: 1px solid black;
+}
+
+#maintodoarea{
+    border: 1px solid black;
+    width: 60%;
+    margin: auto;
+}
+
+#todoheader{
+    border:2px dashed blue;
+}
+
+.todorow{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* .namespace{
+    width: 15%;
+} */

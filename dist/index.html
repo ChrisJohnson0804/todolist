@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Todo List</title>
+</head>
+<body>
+    
+    <div id="sidebar"></div>
+
+    <div id="maintodoarea">
+        <p>I'm the main area</p>
+        <div id="todoheader">
+            <p>I'm the header</p>
+        </div>
+
+        <div id="todoitems">
+
+            <div class="todorow">
+                <div class="namespace"></div>
+                <div class="datespace"></div>
+                <div class="priorityspace"></div>
+                <div class="deletespace"></div>
+                <div class="editspace"></div>
+            </div> 
+
+        </div>
+        <div id="todoformcontainer">
+            <form id="newtodo" onsubmit="return false">
+    
+                <h3>Create a new todo item</h3>
+
+                <label for="project">Project: </label>
+                <input type="text" placeholder="project name" name="project">
+    
+                <label for="name">Name: </label>
+                <input type ="text" placeholder="enter todo name" name="name" required>
+    
+                <label for="duedate">Due Date: </label>
+                <input type="date" name="duedate" >
+    
+                <label for="priority">Priority Level: </label>
+    
+                <input type="radio" id="low" name="priority" value="low">
+                <label for="low">Low</label>
+    
+                <input type="radio" id="medium" name="priority" value="medium">
+                <label for="medium">Medium</label>
+    
+                <input type="radio" id="high" name="priority" value="high">
+                <label for="high">High</label>
+    
+                <button id="addtodo">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    
+    <script src="main.js"></script>
+</body>
+</html>
