@@ -1,64 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="../fontawesome/js/all.min.js"></script>
     <title>Todo List</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <div id="sidebar"></div>
 
     <div id="maintodoarea">
-        <p>I'm the main area</p>
-        <div id="todoheader">
-            <p>I'm the header</p>
+      <p>I'm the main area</p>
+      <div id="todoheader">
+        <p>I'm the header</p>
+      </div>
+
+      <div id="todoitems">
+        <div class="todorow">
+          <div class="namespace">Test Todo</div>
+          <div class="datespace">12/15/2020</div>
+          <div class="priorityspace">High</div>
+          <div class="deletespace"><i class="fas fa-trash"></i></div>
+          <div class="editspace"><i class="far fa-edit"></i></div>
         </div>
+      </div>
 
-        <div id="todoitems">
+      <div id="todoformcontainer">
+        <form id="newtodo" onsubmit="return false">
+          <h3>Create a new todo item</h3>
 
-            <div class="todorow">
-                <div class="namespace"></div>
-                <div class="datespace"></div>
-                <div class="priorityspace"></div>
-                <div class="deletespace"></div>
-                <div class="editspace"></div>
-            </div> 
+          <label for="project">Project: </label>
+          <input type="text" placeholder="project name" name="project" />
 
-        </div>
-        <div id="todoformcontainer">
-            <form id="newtodo" onsubmit="return false">
-    
-                <h3>Create a new todo item</h3>
+          <label for="name">Name: </label>
+          <input
+            type="text"
+            placeholder="enter todo name"
+            name="name"
+            required="true"
+          />
 
-                <label for="project">Project: </label>
-                <input type="text" placeholder="project name" name="project">
-    
-                <label for="name">Name: </label>
-                <input type ="text" placeholder="enter todo name" name="name" required>
-    
-                <label for="duedate">Due Date: </label>
-                <input type="date" name="duedate" >
-    
-                <label for="priority">Priority Level: </label>
-    
-                <input type="radio" id="low" name="priority" value="low">
-                <label for="low">Low</label>
-    
-                <input type="radio" id="medium" name="priority" value="medium">
-                <label for="medium">Medium</label>
-    
-                <input type="radio" id="high" name="priority" value="high">
-                <label for="high">High</label>
-    
-                <button id="addtodo">Submit</button>
-            </form>
-        </div>
+          <label for="duedate">Due Date: </label>
+          <input type="date" name="duedate" />
+
+          <label for="priority">Priority Level: </label>
+
+          <input type="radio" id="low" name="priority" value="low" />
+          <label for="low">Low</label>
+
+          <input type="radio" id="medium" name="priority" value="medium" />
+          <label for="medium">Medium</label>
+
+          <input type="radio" id="high" name="priority" value="high" />
+          <label for="high">High</label>
+
+          <button id="addtodo">Submit</button>
+        </form>
+      </div>
     </div>
 
-
-    
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
